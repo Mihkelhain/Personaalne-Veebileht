@@ -6,6 +6,26 @@ const router = useRouter()
 const navigate = (path) => {
   router.push(path)
 }
+defineProps({
+  usrName:{
+    type:String,
+    required:false
+  }
+})
+
+function openLogin() {
+  console.log("Opened login")
+  document.getElementById("myForm").style.display = "block";
+}
+function openSignUp() {
+  document.getElementById("myForm").style.display = "block";
+}
+function closeLogin() {
+  document.getElementById(  "myForm").style.display = "none";
+}
+function closeSignUp() {
+  document.getElementById("myForm").style.display = "none";
+}
 </script>
 
 <template>
@@ -30,7 +50,7 @@ const navigate = (path) => {
     </div>
 
     <div id="logHead">
-      <button id="headEle">
+      <button id="headEle" onclick="openLogin()">
         log in
       </button>
       <button id="headEle">
@@ -38,6 +58,9 @@ const navigate = (path) => {
       </button>
     </div>
   </div>
+  <div class="logPopUp" id="loginPop"></div>
+  <div class="signPopUp" id="signUpPop"></div>
+
 </template>
 
 <style scoped>
