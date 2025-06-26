@@ -28,7 +28,7 @@ defineProps({
 <style scoped>
  .details{
    margin: auto;
-   width: calc(100% - 11.2rem);
+   width: calc(100% - 12.5em);
  }
  h3{
    color: #99ff95;
@@ -36,10 +36,9 @@ defineProps({
 #mainHeader{
   display: flex;
   flex-direction: row;
+  margin-left: 5px;
 }
 #entSlot{
   color:white;
 }
 </style>
-<script setup lang="ts">
-</script>

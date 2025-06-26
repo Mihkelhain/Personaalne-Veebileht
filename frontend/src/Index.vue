@@ -1,9 +1,16 @@
 <script setup>
-
+import headerMih from './components/mihHeader.vue'
+import IndexPage from "@/components/indexPage.vue";
 </script>
 
 <template>
-  <router-view></router-view>
+  <header>
+    <headerMih usr-name="tung"/>
+  </header>
+
+  <main>
+    <index-page usr-name="tung"/>
+  </main>
 </template>
 
 <style scoped>

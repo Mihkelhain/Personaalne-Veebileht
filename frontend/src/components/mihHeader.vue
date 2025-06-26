@@ -1,43 +1,43 @@
 <script setup>
-defineProps({
-  usrName:{
-    type:String,
-    required: false
-  }
-    }
-)
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const navigate = (path) => {
+  router.push(path)
+}
 </script>
 
 <template>
- <div id="headId">
-   <p id="headEle"> <!-- TODO make this change to guest if user is not logged in else it displays the username -->
-     mhWebsite@{{usrName}} ~
-   </p>
+  <div id="headId">
+    <p id="headEle">
+      mhWebsite@{{usrName}} ~
+    </p>
 
-   <div id="buttonHead">
-     <button id="headEle">
-       main page
-     </button>
-     <button id="headEle">
-       blog
-     </button>
-     <button id="headEle">
-       contact me
-     </button>
-     <button id="headEle">
-       ssh portal
-     </button>
-   </div>
+    <div id="buttonHead">
+      <button @click="navigate('/')" id="headEle">
+        main page
+      </button>
+      <button @click="navigate('/blog')" id="headEle">
+        blog
+      </button>
+      <button @click="navigate('/contactMe')" id="headEle">
+        contact me
+      </button>
+      <button @click="navigate('/sshPortal')" id="headEle">
+        ssh portal
+      </button>
+    </div>
 
-   <div id="logHead">
-     <button id="headEle">
-       log in
-     </button>
-     <button id="headEle">
-       sign up
-     </button>
-   </div>
- </div>
+    <div id="logHead">
+      <button id="headEle">
+        log in
+      </button>
+      <button id="headEle">
+        sign up
+      </button>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -55,13 +55,18 @@ defineProps({
 #headEle{
   margin: 5px;
 }
-button{
-  border-radius: 6px;
+button {
+  border-radius: 8px;
+  border: 2px solid white;
   background: black;
   color: cornflowerblue;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block;
 }
-button:hover{
-  color:#2760A2;
+
+button:hover {
+  color: #2760A2;
   cursor: pointer;
 }
 #logHead{
